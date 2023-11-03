@@ -38,7 +38,7 @@ app.post("/confirmTaskCompletion/:address", async (req, res) => {
   const userAddress = req.params.address;
   try {
     // Use your private key for signing transactions
-    const privateKey = PRIVATE_KEY; // Replace with your private key
+    const privateKey = process.env.PRIVATE_KEY; // Replace with your private key
 
     // Build the transaction data
     const data = contract.methods.confirmTaskCompleted().encodeABI();
